@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="./assets/output.css">
+  <link rel="stylesheet" href="assets/general.css">
+  <link rel="stylesheet" href="assets/css/uicss.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> 
+</head>
+<body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
+
+<nav class="fixed  w-full z-50 backdrop-blur-md py-3 px-4 ">
+  <div class=" mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+        <div class=" flex shrink-0 items-center">
+          <img src="assets/img/Captura-Photoroom.png" alt="Your Company" class="h-12 w-auto" />
+        </div>
+<div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
+  <!-- Mobile menu button-->
+  <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+    <span class="absolute -inset-0.5"></span>
+    <span class="sr-only">Open main menu</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+      <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+      <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
+</div>
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        
+
+
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+ 
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">PROGRAMAS</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA </a>
+          </div>
+        </div>
+      </div>
+
+
+
+        <!-- BOTON CYBER PRO  -->
+        <div class="hidden sm:inline-flex">
+<button
+  class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]"
+>
+  <span class="flex items-center gap-3 relative z-10">
+    <svg
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      class="w-5 h-5 transition-transform duration-300 group-hover:scale-125"
+    >
+      <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+    </svg>
+    ¡Inscríbete ahora!
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150"
+    >
+      <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
+    </svg>
+  </span>
+  <div
+    class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+  ></div>
+  <div
+    class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"
+  ></div>
+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+    <div class="space-y-1 px-2 pt-2 pb-3">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">PROGRAMAS</a>
+      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA</a>
+    </div>
+  </el-disclosure>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section class="py-32 px-4 sm:px-8 lg:px-16 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        EN PROCESO <span class="gradient-text">PAGINA OFFICIAL</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        DESCRIPCION ...
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="https://docs.chaicode.com/youtube/getting-started/"
+          class="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-full hover-scale transition">
+          LEFT BUTTON 
+        </a>
+        <a href="https://courses.chaicode.com/learn"
+          class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-8 rounded-full hover-scale transition flex items-center justify-center gap-2">
+          <i class="fas fa-play"></i> RIGHT BUTTON
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community Section -->
+  <section class="py-16 px-4 sm:px-8 lg:px-16 bg-gray-800 rounded-3xl mx-4 sm:mx-8 lg:mx-16">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2">
+        <img src="#"
+                     alt="Community"
+                     class="rounded-2xl shadow-xl w-full max-w-md mx-auto">
+      </div>
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+          hOLA
+        </h2>
+        <p class="text-gray-300 mb-8 text-lg">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero placeat fugiat laboriosam magnam sapiente commodi corrupti, quaerat, nemo temporibus, at repudiandae. Libero explicabo eos impedit ex culpa ipsam voluptate ea!
+        </p>
+        <a href="#"
+          class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full hover-scale transition inline-flex items-center gap-2">
+          <i class="fab fa-discord"></i> HOLA
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 sm:px-8 lg:px-16 text-center">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex justify-center mb-6">
+        <img src="https://docs.chaicode.com/_astro/chai-gray.BsQ6Sk6A_Z2kh8Da.webp"
+                     alt="ChaiCode Logo"
+                     class="h-12 w-auto opacity-80">
+      </div>
+      <h3 class="text-2xl font-bold mb-4">holaaaaa</h3>
+      <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus magnam veniam sit impedit aut laudantium quam natus recusandae dolorem itaque, tempora delectus, debitis distinctio eligendi quod voluptatibus ea, nisi perferendis!
+      </p>
+      <a href="#"
+        class="inline-block border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-gray-900 font-medium py-2 px-6 rounded-full transition">
+        holaaa
+      </a>
+      <div class="mt-8 pt-8 border-t border-gray-800">
+        <div class="flex justify-center space-x-6 mb-4">
+          <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+            <i class="fab fa-twitter text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+            <i class="fab fa-youtube text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-amber-400 transition">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+        <p class="text-gray-500 text-sm">
+          ©2025 todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
