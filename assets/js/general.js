@@ -72,3 +72,14 @@
                 }, interval);
             });
         });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicialización del carrusel
+    const carousel = new Carousel(document.getElementById('default-carousel'), {
+        // tus opciones aquí
+    });
+});
