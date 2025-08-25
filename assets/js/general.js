@@ -41,45 +41,48 @@
   });
 
 
-/* ////////////////
-  ANIMACION DE CONTEO
+        /* ////////////////
+  TESTIMONIOS
   ////////////////// */
+ function scrollTestimonials(direction) {
+            const slider = document.getElementById('testimonialSlider');
+            const cardWidth = window.innerWidth < 640 ? 275 : window.innerWidth < 768 ? 360 : 420;
+            
+            if (direction === 'left') {
+                slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            } else {
+                slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+        }
 
-  document.addEventListener('DOMContentLoaded', function() {
-            // Configuración de los contadores
-            const counters = [
-                { element: 'counter1', target: 25, prefix: '', suffix: '+' },
-                { element: 'counter2', target: 5, prefix: '', suffix: 'K+' },
-                { element: 'counter3', target: 3, prefix: '+', suffix: '' }
-            ];
-            
-            const duration = 2000; // Duración de la animación en ms
-            const interval = 50; // Intervalo de actualización en ms
-            
-            counters.forEach(counter => {
-                const element = document.getElementById(counter.element);
-                const start = 0;
-                const increment = (counter.target - start) / (duration / interval);
-                let current = start;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= counter.target) {
-                        clearInterval(timer);
-                        current = counter.target;
-                    }
-                    element.textContent = counter.prefix + Math.floor(current) + counter.suffix;
-                }, interval);
-            });
+        // Event listeners
+        const slider = document.getElementById('testimonialSlider');
+        
+        // Touch events for mobile
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
         });
 
+        slider.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Auto-scroll disabled - only manual navigation available
 
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicialización del carrusel
-    const carousel = new Carousel(document.getElementById('default-carousel'), {
-        // tus opciones aquí
-    });
-});
+
+
+
+
+
+
+      
