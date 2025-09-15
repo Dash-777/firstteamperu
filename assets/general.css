@@ -75,3 +75,32 @@
             0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
             50% { box-shadow: 0 0 30px rgba(255, 107, 53, 0.5); }
         }
+
+
+
+        /* para la galeria de fotos de instalaciones */
+                .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .zoom-in {
+            animation: zoomIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .gallery-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }

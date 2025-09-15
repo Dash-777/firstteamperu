@@ -173,7 +173,7 @@
     <div class="w-full overflow-hidden relative">
   <!-- Imagen del banner -->
   <img
-    src="assets/img/banerfondoaa.jpg"
+    src="assets/img/banerfond.jpg"
     alt="Banner principal" class="w-full h-[200px] md:h-[400px] lg:h-[500px] object-cover object-center opacity-35" style="min-height: 200px" sizes="100vw"/>
   <div class="absolute inset-0 flex items-center justify-center ">
     <h1 class="text-white text-4xl md:text-7xl font-bold p-6 text-center text-shadow-lg/100  ">
@@ -208,7 +208,7 @@
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1075&q=80" alt="Historia del gimnasio" class="rounded-lg shadow-2xl w-full h-auto">
+                    <img src="assets/img/instalacion.jpg" alt="Historia del gimnasio" class="rounded-lg shadow-2xl w-full h-auto">
                 </div>
             </div>
         </div>
@@ -340,20 +340,22 @@
         </div>
     </section>
 
+    
     <!-- Facilities -->
     <section class="py-16 bg-dark-blue">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Instalaciones" class="rounded-lg shadow-lg w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Instalaciones" class="rounded-lg shadow-lg w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1556817411-31ae72fa3ea0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Instalaciones" class="rounded-lg shadow-lg w-full h-48 object-cover">
-                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Instalaciones" class="rounded-lg shadow-lg w-full h-48 object-cover">
+                        <!-- Imágenes de la galería -->
+                        <img src="assets/img/barra.jpg" alt="Instalaciones" class="rounded-lg shadow-lg w-full h-48 object-cover gallery-img cursor-pointer" onclick="openModal(this)">
+                        <img src="assets/img/espacio.jpg" alt="Mancuernas" class="rounded-lg shadow-lg w-full h-48 object-cover gallery-img cursor-pointer" onclick="openModal(this)">
+                        <img src="assets/img/mancuernas.jpg" alt="Barra" class="rounded-lg shadow-lg w-full h-48 object-cover gallery-img cursor-pointer" onclick="openModal(this)">
+                        <img src="assets/img/pesos.jpg" alt="Pesos" class="rounded-lg shadow-lg w-full h-48 object-cover gallery-img cursor-pointer" onclick="openModal(this)">
                     </div>
                 </div>
                 <div class="md:w-1/2 md:pl-12">
-                    <h2 class="text-3xl font-bold mb-6">Nuestras <span class="text-accent-blue">Instalaciones</span></h2>
+                    <h2 class="text-3xl font-bold mb-6 text-white">Nuestras <span class="text-accent-blue">Instalaciones</span></h2>
                     <p class="text-gray-300 mb-6">En PowerFit Gym hemos creado un espacio diseñado para ofrecerte la mejor experiencia de entrenamiento:</p>
                     
                     <ul class="space-y-4">
@@ -386,6 +388,19 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal para mostrar imagen -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="fixed inset-0 bg-black opacity-75" onclick="closeModal()"></div>
+        <div class="relative z-50 max-w-4xl w-full mx-4 zoom-in">
+            <div class="bg-transparent rounded-lg overflow-hidden">
+                <img id="modalImage" src="" class="w-full rounded shadow-lg">
+            </div>
+            <button class="absolute -top-12 right-0 text-white text-3xl hover:text-accent-blue transition-colors" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Testimonials -->
     <section class="py-16 bg-night-blue">

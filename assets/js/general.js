@@ -79,6 +79,49 @@
 
 
 
+        /* nosotros imagenes */
+  // Función para abrir el modal con la imagen
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            // Establecer la fuente de la imagen en el modal
+            modalImage.src = element.src;
+            
+            // Mostrar el modal
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevenir scroll
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            
+            // Ocultar el modal
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Permitir scroll nuevamente
+        }
+
+        // Cerrar modal con la tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Inicializar todas las imágenes de la galería
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            
+            galleryImages.forEach(img => {
+                // Ya tenemos el evento onclick configurado en el HTML
+                // Pero podríamos agregar más funcionalidad aquí si es necesario
+            });
+        });
+
+
+
+
 
 
 
