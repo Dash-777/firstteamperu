@@ -1,721 +1,1181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <link rel="stylesheet" href="./assets/output.css">
-  <link rel="stylesheet" href="assets/general.css">
-</head>
-<body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
-
-<nav class="fixed w-full z-50 backdrop-blur-md py-3 px-4">
-  <div class="max-w-7xl mx-auto px-2 sm:px-6">
-    <div class="flex h-16 items-center justify-between">
-      
-      <!-- Logo - Izquierda -->
-<div class="flex gap-3">
-        <div class="flex shrink-0 items-center">
-        <img href="index.html" src="assets/img/Captura-Photoroom.png" alt="Your Company" class="h-12 w-auto" />
-      </div>
-      <div class="flex shrink-0 items-center md:mx-3">
-        <img href="index.html" src="assets/img/alan_logo.png" alt="Your Company" class="h-12 w-auto" />
-      </div>
-</div>
-
-      <!-- Menú Desktop - Centro -->
-      <div class="hidden sm:flex flex-1 justify-center">
-        <div class="flex space-x-6">
-          <a href="index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
-          <a href="nosotros.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
-          
-          <!-- Programs Dropdown Desktop -->
-          <div class="relative">
-            <button id="programs-dropdown-button" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center">
-              PROGRAMAS
-              <svg class="w-4 h-4 ml-1 transition-transform duration-200" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div id="programs-dropdown" class="absolute hidden bg-gray-800 min-w-[160px] rounded-md shadow-lg z-10">
-              <div class="py-1">
-                <a href="programa1.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 1</a>
-                <a href="programa2.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 2</a>
-                <a href="programa3.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 3</a>
-                <a href="programa4.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 4</a>
-              </div>
+    <link rel="stylesheet" href="./assets/output.css" />
+    <link rel="stylesheet" href="assets/general.css" />
+  </head>
+  <body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
+    <!-- navbar -->
+    <nav class="fixed w-full z-50 backdrop-blur-md py-3 px-4">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo - Izquierda -->
+          <div class="flex gap-3">
+            <div class="flex shrink-0 items-center">
+              <img
+                href="index.html"
+                src="assets/img/Captura-Photoroom.png"
+                alt="Your Company"
+                class="h-12 w-auto"
+              />
+            </div>
+            <div class="flex shrink-0 items-center md:mx-3">
+              <img
+                href="index.html"
+                src="assets/img/alan_logo.png"
+                alt="Your Company"
+                class="h-12 w-auto"
+              />
             </div>
           </div>
-          
-          <a href="entrenamientos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA</a>
-        </div>
-      </div>
 
-      <!-- Redes Sociales y Botón - Derecha -->
-      <div class="hidden sm:flex items-center space-x-4">
-        <!-- Redes Sociales -->
-        <div class="flex items-center space-x-2">
-          <!-- Instagram -->
-          <a class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
-            href="#" target="_blank" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
+          <!-- Menú Desktop - Centro -->
+          <div class="hidden sm:flex flex-1 justify-center">
+            <div class="flex space-x-6">
+              <a
+                href="index.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >INICIO</a
+              >
+              <a
+                href="nosotros.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >NOSOTROS</a
+              >
+              
 
-          <!-- YouTube -->
-          <a class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
+              <!-- Programs Dropdown Desktop -->
+              <div class="relative">
+                <button
+                  id="programs-dropdown-button"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
+                >
+                  PROGRAMAS
+                  <svg
+                    class="w-4 h-4 ml-1 transition-transform duration-200"
+                    id="dropdown-arrow"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="programs-dropdown"
+                  class="absolute hidden bg-gray-800 min-w-[160px] rounded-md shadow-lg z-10"
+                >
+                  <div class="py-1">
+                    <a
+                      href="programa1.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Alto Rendimiento
+                    </a>
+                    <a
+                      href="programa2.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Clases Grupales</a
+                    >
+                    <a
+                      href="programa3.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Tennis Performance</a
+                    >
+                    <a
+                      href="programa4.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Recuperación Física</a
+                    >
+                  </div>
+                </div>
+              </div>
 
-          <!-- Twitter/X -->
-          <a class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="X">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+              <a
+                href="galeria.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >GALERIA</a
+              >
+                            <a
+                href="ubicacion.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >UBICACION</a
+              >
+            </div>
+          </div>
 
-          <!-- TikTok -->
-          <a class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="TikTok">
-            <img src="assets/img/tiktopdd.jpg" alt="TikTok" class="w-6 h-6 object-cover rounded-full" />
-          </a>
+          <!-- Redes Sociales y Botón - Derecha -->
+          <div class="hidden sm:flex items-center space-x-4">
+            <!-- Redes Sociales -->
+            <div class="flex items-center space-x-2">
+              <!-- Instagram -->
+              <a
+                class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <img
+                  src="assets/img/instagram-logo.png"
+                  alt="Facebook"
+                  class="w-8 h-8 object-cover rounded-full"
+                />
+              </a>
 
-          <!-- Facebook -->
-          <a class="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="Facebook">
-            <img src="assets/img/facebook-logo.png" alt="Facebook" class="w-6 h-6 object-cover rounded-full" />
-          </a>
-        </div>
+              <!-- YouTube -->
+              <a
+                class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="YouTube"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+              </a>
 
-        <!-- Botón CTA -->
-        <div>
-            <a href="inscripcion.html" class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]">
-                <span class="flex items-center justify-center gap-2 relative z-10">
-                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                    ¡Inscríbete ahora!
+              <!-- Twitter/X -->
+              <a
+                class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="X"
+              >
+                <img
+                  src="assets/img/x-logo.png"
+                  alt="Facebook"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
+
+              <!-- TikTok -->
+              <a
+                class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="TikTok"
+              >
+                <img
+                  src="assets/img/tiktopdd.jpg"
+                  alt="TikTok"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
+
+              <!-- Facebook -->
+              <a
+                class="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <img
+                  src="assets/img/facebook-logo.png"
+                  alt="Facebook"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
+            </div>
+
+            <!-- Botón CTA -->
+            <div>
+              <a
+                href="inscripcion.html"
+                class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]"
+              >
+                <span
+                  class="flex items-center justify-center gap-2 relative z-10"
+                >
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  ¡Inscríbete ahora!
                 </span>
-                <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-            </a>
-        </div>
-      </div>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+              </a>
+            </div>
+          </div>
 
-      <!-- Botón menú móvil -->
-      <div class="sm:hidden">
-        <button id="mobile-menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none">
-          <span class="sr-only">Open main menu</span>
-          <svg id="mobile-menu-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="mobile-menu-close" class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden sm:hidden">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <a href="index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
-        <a href="nosotros.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
-        
-        <!-- Programs Dropdown Mobile -->
-        <div>
-          <button id="mobile-programs-button" class="w-full text-left rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex justify-between items-center">
-            PROGRAMAS
-            <svg id="mobile-programs-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="mobile-programs-dropdown" class="hidden pl-4">
-            <a href="programa1.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 1</a>
-            <a href="programa2.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 2</a>
-            <a href="programa3.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 3</a>
-            <a href="programa4.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 4</a>
+          <!-- Botón menú móvil -->
+          <div class="sm:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                id="mobile-menu-open"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                id="mobile-menu-close"
+                class="hidden w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        
-        <a href="entrenamientos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA</a>
-        
 
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+          <div class="space-y-1 px-2 pt-2 pb-3">
+            <a
+              href="index.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >INICIO</a
+            >
+            <a
+              href="nosotros.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >NOSOTROS</a
+            >
 
-        <!-- Botón CTA en móvil -->
-        <div class="pt-4 px-3">
-            <a href="inscripcion.html" class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]">
-                <span class="flex items-center justify-center gap-2 relative z-10">
-                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                    ¡Inscríbete ahora!
+            <!-- Programs Dropdown Mobile -->
+            <div>
+              <button
+                id="mobile-programs-button"
+                class="w-full text-left rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex justify-between items-center"
+              >
+                PROGRAMAS
+                <svg
+                  id="mobile-programs-arrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobile-programs-dropdown" class="hidden pl-4">
+                <a
+                  href="programa1.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Alto Rendimiento</a
+                >
+                <a
+                  href="programa2.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Clases Grupales</a
+                >
+                <a
+                  href="programa3.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Tennis Performance</a
+                >
+                <a
+                  href="programa4.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Recuperación Física</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="galeria.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >GALERIA</a
+            >
+                        <a
+              href="ubicacion.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >UBICACION</a
+            >
+
+            <!-- Botón CTA en móvil -->
+            <div class="pt-4 px-3">
+              <a
+                href="inscripcion.html"
+                class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]"
+              >
+                <span
+                  class="flex items-center justify-center gap-2 relative z-10"
+                >
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  ¡Inscríbete ahora!
                 </span>
-                <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-            </a>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
+    <div class="p-10"></div>
 
-<div class="p-10"></div> 
-
-<div class="w-full overflow-hidden relative">
-    <img 
-        src="assets/img/GYMPRINCIPALBANER.jpg" 
+    <div class="w-full overflow-hidden relative">
+      <img
+        src="assets/img/GYMPRINCIPALBANER.jpg"
         alt="Banner principal del gimnasio"
-        class="w-full h-[200px] md:h-[400px] lg:h-[500px] object-cover  object-top"
+        class="w-full h-[200px] md:h-[400px] lg:h-[500px] object-cover object-top"
         sizes="100vw"
+      />
+    </div>
+
+    <div
+      class="container mx-auto p-4 justify-center bg-transparent rounded-2xl mt-3 md:hidden"
     >
-</div>
+      <h1 class="text-center text-3xl text-white font-bold">NUESTRAS REDES</h1>
+    </div>
 
-  <div class="container mx-auto p-4 justify-center bg-transparent rounded-2xl mt-3 md:hidden" >
-    <h1 class="text-center text-3xl text-white font-bold">NUESTRAS REDES</h1>
-  </div>
-
-  <!-- redes -->
-    <section class="flex gap-5 justify-center shadow-md shadow-cyan-700 rounded-b-4xl mx-auto w-full p-4 md:hidden">
-
+    <!-- redes -->
+    <section
+      class="flex gap-5 justify-center shadow-md shadow-cyan-700 rounded-b-4xl mx-auto w-full p-4 md:hidden"
+    >
       <!-- YouTube -->
-    <a
-  class="social-button animate-slide-up-fade bg-red-600 animate-delay-100"
-  href="#"
-  target="_blank"
-  aria-label="tiktok"
-  title="Ir a tiktok de "
-  >
-    <img
-    src="assets/img/Youtube-logo.png"
-    alt="YouTube"
-    class="w-7 h-7 object-cover rounded-3xl"
-    />
-    </a>
+      <a
+        class="social-button animate-slide-up-fade bg-red-600 animate-delay-100"
+        href="#"
+        target="_blank"
+        aria-label="tiktok"
+        title="Ir a tiktok de "
+      >
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+          <path
+            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+          />
+        </svg>
+      </a>
 
       <!-- X (Twitter) -->
-      <a class="bg-black social-button animate-slide-up-fade animate-delay-200" href="#"
-        target="_blank" aria-label="X" title="Ir a X de @midudev">
-       <img
-    src="assets/img/x-logo.png"
-    alt="Instagram"
-    class="w-10 h-10 object-cover rounded-full"
-    />
+      <a
+        class="bg-black social-button animate-slide-up-fade animate-delay-200"
+        href="#"
+        target="_blank"
+        aria-label="X"
+        title="Ir a X de @midudev"
+      >
+        <img
+          src="assets/img/x-logo.png"
+          alt="Instagram"
+          class="w-10 h-10 object-cover rounded-full"
+        />
       </a>
 
       <!-- Instagram -->
-      <a class="social-button animate-slide-up-fade animate-delay-300 bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600"
-        href="#" target="_blank" aria-label="Instagram" title="Ir a Instagram de @midudev">
-    <img
-    src="assets/img/instagram-logo.png"
-    alt="Instagram"
-    class="w-12 h-12 object-cover rounded-full"
-    />
+      <a
+        class="social-button animate-slide-up-fade animate-delay-300 bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600"
+        href="#"
+        target="_blank"
+        aria-label="Instagram"
+        title="Ir a Instagram de @midudev"
+      >
+        <img
+          src="assets/img/instagram-logo.png"
+          alt="Instagram"
+          class="w-12 h-12 object-cover rounded-full"
+        />
       </a>
 
       <!-- tiktok con imagen JPG -->
-    <a
-  class="social-button animate-slide-up-fade bg-black animate-delay-400"
-  href="#"
-  target="_blank"
-  aria-label="tiktok"
-  title="Ir a tiktok de "
-  >
-    <img
-    src="assets/img/tiktopdd.jpg"
-    alt="Instagram"
-    class="w-7 h-7 object-cover rounded-full"
-    />
-    </a>
+      <a
+        class="social-button animate-slide-up-fade bg-black animate-delay-400"
+        href="#"
+        target="_blank"
+        aria-label="tiktok"
+        title="Ir a tiktok de "
+      >
+        <img
+          src="assets/img/tiktopdd.jpg"
+          alt="Instagram"
+          class="w-7 h-7 object-cover rounded-full"
+        />
+      </a>
 
-
-    <!-- Facebook con imagen JPG -->
-<a
-  class="social-button animate-slide-up-fade animate-delay-500 bg-blue-700 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
-  href="#"
-  target="_blank"
-  aria-label="Facebook"
-  title="Ir a Facebook"
->
-  <img
-    src="assets/img/facebook-logo.png"
-    alt="Facebook"
-    class="w-8 h-8 object-cover rounded-full"
-  />
-</a>
-
+      <!-- Facebook con imagen JPG -->
+      <a
+        class="social-button animate-slide-up-fade animate-delay-500 bg-blue-700 p-2 rounded-full shadow-lg hover:scale-105 transition-transform"
+        href="#"
+        target="_blank"
+        aria-label="Facebook"
+        title="Ir a Facebook"
+      >
+        <img
+          src="assets/img/facebook-logo.png"
+          alt="Facebook"
+          class="w-8 h-8 object-cover rounded-full"
+        />
+      </a>
     </section>
 
-  <!-- Hero Section -->
-  <section class="py-10 px-4 sm:px-8 lg:px-16 text-center">
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-        <span class="gradient-text">PROGRAMAS</span>
-      </h1>
-      <p class="text-xl sm:text-2xl text-gray-300  max-w-3xl mx-auto">
-        Ofrecemos programas de fitness adaptados a tus metas: clases grupales, sesiones semi-personalizadas y sesiones personalizadas
-      </p>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section class="pt-10 px-4 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+          <span class="gradient-text">PROGRAMAS</span>
+        </h1>
+        <p class="text-2xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
+          Ofrecemos programas de fitness adaptados a tus metas
+        </p>
+      </div>
+    </section>
 
-
-
-<!-- cards de programas -->
-<div class="container mx-auto py-8 px-4">
-    <div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
+    <!-- cards de programas -->
+    <div class="container mx-auto py-8 px-4">
+      <div class="grid grid-cols-1 xl:grid-cols-4 gap-8">
         <!-- Card 1 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700 ">
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full h-64 object-cover"
+              src="assets/img/clase1A.webp"
+              alt=""
+            />
+          </a>
+          <div class="p-8">
             <a href="#">
-                <img class="rounded-t-lg w-full h-64 object-cover" src="assets/img/clase1A.webp" alt="" />
+              <h5
+                class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Alto Rendimiento
+              </h5>
             </a>
-            <div class="p-8">
-                <a href="#">
-                    <h5 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Clases Grupales</h5>
-                </a>
-                <p class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400">Nuestras clases grupales se centran en el TRX, desarrollando estabilidad, movilidad, fuerza y resistencia. Combinamos TRX con máquinas CIRCUIT SERIES y otros equipos para un entrenamiento funcional completo.</p>
+            <p
+              class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400 text-justify"
+            >
+              Programa diseñado para optimizar el rendimiento físico, mental y técnico de cada atleta.
+              Integra evaluación, planificación, seguimiento y control continuo bajo una metodología científica y personalizada.
 
-              <!-- BOTON CYBER PRO -->
-              <div>
-        <button class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-3 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 transition-transform duration-300 group-hover:scale-125">
-              
-            </svg>
-            ¡Inscríbete!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-              </div>
+            </p>
 
+            <!-- BOTON CYBER PRO -->
+            <div>
+              <button
+                class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]"
+              >
+                <span class="flex items-center gap-3 relative z-10">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5 transition-transform duration-300 group-hover:scale-125"
+                  ></svg>
+                  ¡Inscríbete!
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150"
+                  >
+                    <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+                <div
+                  class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"
+                ></div>
+              </button>
             </div>
+          </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700">
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full h-64 object-cover"
+              src="assets/img/clase2A.webp"
+              alt=""
+            />
+          </a>
+          <div class="p-8">
             <a href="#">
-                <img class="rounded-t-lg w-full h-64 object-cover" src="assets/img/clase2A.webp" alt="" />
+              <h5
+                class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Clases Grupales
+              </h5>
             </a>
-            <div class="p-8">
-                <a href="#">
-                    <h5 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Clases Semi personalizadas</h5>
-                  </a>
-                <p class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400">Clases compartidas con otros 3 alumnos, enfocadas en los objetivos individuales de cada participante. Combinamos atención personalizada y rutinas efectivas adaptadas a tus metas fitness.</p>
-                  
-              <!-- BOTON CYBER PRO -->
-              <div>
-        <button class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-3 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 transition-transform duration-300 group-hover:scale-125">
-              
-            </svg>
-            ¡Inscríbete!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-              </div>
+            <p
+              class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400 text-justify"
+            >
+              Programa diseñado para mejorar la condición física general en grupos pequeños, manteniendo la atención 
+              personalizada y la calidad técnica de cada sesión.
+
+            </p>
+
+            <!-- BOTON CYBER PRO -->
+            <div>
+              <button
+                class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]"
+              >
+                <span class="flex items-center gap-3 relative z-10">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5 transition-transform duration-300 group-hover:scale-125"
+                  ></svg>
+                  ¡Inscríbete!
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150"
+                  >
+                    <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+                <div
+                  class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"
+                ></div>
+              </button>
             </div>
+          </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700">
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full h-64 object-cover"
+              src="assets/img/clase3A.webp"
+              alt=""
+            />
+          </a>
+          <div class="p-8">
             <a href="#">
-                <img class="rounded-t-lg w-full h-64 object-cover" src="assets/img/clase3A.webp" alt="" />
+              <h5
+                class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Tennis Performance
+              </h5>
             </a>
-            <div class="p-8">
-                <a href="#">
-                    <h5 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Personal Trainning</h5>
-                </a>
-                <p class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400">Clases personalizadas con entrenadores calificados, ofreciendo variedad de entrenamientos para lograr resultados efectivos y seguros a corto y largo plazo.</p>
+            <p
+              class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400 text-justify"
+            >
+              Programa diseñado para desarrollar el máximo potencial físico, técnico y mental de cada tenista.
+              Integra evaluación, planificación y control continuo bajo una metodología científica orientada al alto rendimiento.
+            </p>
 
-              <!-- BOTON CYBER PRO -->
-              <div>
-        <button class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-3 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 transition-transform duration-300 group-hover:scale-125">
-              
-            </svg>
-            ¡Inscríbete!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-              </div>
-
+            <!-- BOTON CYBER PRO -->
+            <div>
+              <button
+                class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]"
+              >
+                <span class="flex items-center gap-3 relative z-10">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5 transition-transform duration-300 group-hover:scale-125"
+                  ></svg>
+                  ¡Inscríbete!
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150"
+                  >
+                    <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+                <div
+                  class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"
+                ></div>
+              </button>
             </div>
+          </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700">
+        <div
+          class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <a href="#">
+            <img
+              class="rounded-t-lg w-full h-64 object-cover"
+              src="assets/img/clase4A.webp"
+              alt=""
+            />
+          </a>
+          <div class="p-8">
             <a href="#">
-                <img class="rounded-t-lg w-full h-64 object-cover" src="assets/img/clase4A.webp" alt="" />
+              <h5
+                class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                Recuperación Fisica
+              </h5>
             </a>
-            <div class="p-8">
-                <a href="#">
-                    <h5 class="mb-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Pilates <br>Reformer</h5>
-                </a>
-                <p class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400">Experimenta una revolución en tu entrenamiento con nuestro exclusivo programa de Pilates, diseñado por Jesús Lezama para llevarte más allá de tus límites</p>
+            <p
+              class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400 text-justify"
+            >
+              Pensado para personas en proceso de rehabilitación física, adultos mayores o quienes desean retomar su actividad física de forma segura y guiada.
+            </p>
 
-              <!-- BOTON CYBER PRO -->
-              <div>
-        <button class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-3 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 transition-transform duration-300 group-hover:scale-125">
-              
-            </svg>
-            ¡Inscríbete!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-              </div>
-
+            <!-- BOTON CYBER PRO -->
+            <div>
+              <button
+                class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]"
+              >
+                <span class="flex items-center gap-3 relative z-10">
+                  <svg
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5 transition-transform duration-300 group-hover:scale-125"
+                  ></svg>
+                  ¡Inscríbete!
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150"
+                  >
+                    <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
+                  </svg>
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+                <div
+                  class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"
+                ></div>
+              </button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-  
 
-
-<!-- instructor principal -->
-<div class="container mx-auto py-8 px-4">
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700">
-            <div class="p-8">
-                <a href="#">
-                    <h5 class="mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-4xl">Alan ... </h5>
-                    <h5 class="mb-4 font-bold tracking-tight text-gray-900 dark:text-white text-2xl"> instructor </h5>
-                </a>
-                <p class="mb-6 text-xl font-normal text-gray-700 dark:text-gray-400"> Soy Alan ... personal trainer certificado por IFBB con 25 años de experiencia. Especialista en TRX funcional y musculación, ofrezco entrenamiento personalizado en Lima. Estoy certificado internacionalmente en TRX y Pilates, por lo que combino las últimas tendencias en fitness con programas personalizados para transformar tu cuerpo y ayudarte a alcanzar tus metas de fuerza, aumento de masa muscular o pérdida de peso. La salud y bienestar de mis clientes son mi principal objetivo.</p>
-              <!-- BOTON CYBER PRO -->
-              <div>
-                <a href="nosotros.html">
-        <button class="group relative px-3 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-3 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5 transition-transform duration-300 group-hover:scale-125">
-              
-            </svg>
-            ¡MAS SOBRE NOSOTROS!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-        </a>
-              </div>
-              </div>
-             
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-white border border-gray-200 rounded-lg shadow-lg shadow-cyan-700 dark:bg-gray-800 dark:border-gray-700">
-          
-                <img class="rounded-t-lg w-full h-164 object-cover" src="assets/img/Alan (1).png" alt="" />
-     
-
-        </div>
-
+<!-- Instructor principal -->
+<div class="container mx-auto py-12 px-4">
+  <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
+    
+    <!-- Imagen del instructor -->
+    <div class="flex justify-center">
+      <img
+        src="assets/img/Alan (1).png"
+        alt="Alan Razuri"
+        class="rounded-2xl shadow-xl shadow-cyan-700/40 w-full max-w-md object-cover"
+      />
     </div>
+
+    <!-- Información del instructor -->
+    <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Alan Razuri</h2>
+      <h3 class="text-xl font-semibold text-cyan-500 mb-6">Entrenador Personal</h3>
+      
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        Soy Alan, entrenador personal certificado por la IFBB con más de 25 años de experiencia. 
+        Especialista en TRX funcional y musculación, ofrezco entrenamiento personalizado en Lima. 
+        Mis programas combinan TRX y Pilates para transformar tu cuerpo, mejorar tu fuerza, aumentar masa muscular 
+        o ayudarte a perder peso de manera saludable. La salud y bienestar de mis clientes son mi prioridad.
+      </p>
+
+      <!-- Botón -->
+      <a href="nosotros.html" 
+         class="inline-block px-6 py-3 text-sm font-bold uppercase tracking-wider rounded-lg 
+                border border-cyan-500 text-cyan-400 bg-black hover:bg-cyan-500 hover:text-white 
+                transition-all duration-300 shadow-md hover:shadow-cyan-400/40">
+        Más sobre nosotros
+      </a>
+    </div>
+
+  </div>
 </div>
 
 
- <section class="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <!-- Background decorativo -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <!-- Background decorativo -->
 
-        <div class="max-w-7xl mx-auto relative z-10">
-            <!-- Header -->
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                    Lo que dicen nuestros miembros
-                </h2>
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                    Descubre cómo hemos transformado la vida de miles de personas
-                </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6"></div>
-            </div>
-
-            <!-- Testimonios Slider -->
-            <div class="relative mb-16">
-                <div class="testimonial-slider flex overflow-x-auto gap-3 sm:gap-4 md:gap-6 pb-6 px-2 sm:px-0 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [scroll-behavior:smooth]" id="testimonialSlider">
-                    <!-- Testimonio 1 -->
-                    <div class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]">
-                        <div class="flex items-start mb-3 md:mb-6">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0">
-                                M
-                            </div>
-                            <div class="ml-2 sm:ml-4 min-w-0 flex-1">
-                                <h4 class="text-sm sm:text-xl font-bold text-white leading-tight">María González</h4>
-                                <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
-                                <div class="flex mt-1">
-                                    <span class="text-yellow-400 text-xs sm:text-base">★★★★★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base">
-                            "En 8 meses he perdido 15 kilos y ganado mucha masa muscular. Los entrenadores son increíbles."
-                        </p>
-                        <div class="text-xs text-gray-400">
-                            📈 -15kg • 💪 +20% masa
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 2 -->
-                    <div class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]">
-                        <div class="flex items-start mb-3 md:mb-6">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0">
-                                C
-                            </div>
-                            <div class="ml-2 sm:ml-4 min-w-0 flex-1">
-                                <h4 class="text-sm sm:text-xl font-bold text-white leading-tight">Carlos Rodríguez</h4>
-                                <p class="text-xs sm:text-base text-blue-400">Miembro 2022</p>
-                                <div class="flex mt-1">
-                                    <span class="text-yellow-400 text-xs sm:text-base">★★★★★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base">
-                            "El ambiente es fantástico y las instalaciones son de primera. He mejorado mi fuerza en un 40%."
-                        </p>
-                        <div class="text-xs text-gray-400">
-                            💪 +40% fuerza • ⏱️ 18 meses
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 3 -->
-                    <div class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]">
-                        <div class="flex items-start mb-3 md:mb-6">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0">
-                                A
-                            </div>
-                            <div class="ml-2 sm:ml-4 min-w-0 flex-1">
-                                <h4 class="text-sm sm:text-xl font-bold text-white leading-tight">Ana Martínez</h4>
-                                <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
-                                <div class="flex mt-1">
-                                    <span class="text-yellow-400 text-xs sm:text-base">★★★★★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base">
-                            "Después de tener mi bebé, pensé que nunca volvería a estar en forma. ¡Estoy mejor que antes!"
-                        </p>
-                        <div class="text-xs text-gray-400">
-                            🤱 Post-parto • 💪 Mejor forma
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 4 -->
-                    <div class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]">
-                        <div class="flex items-start mb-3 md:mb-6">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0">
-                                J
-                            </div>
-                            <div class="ml-2 sm:ml-4 min-w-0 flex-1">
-                                <h4 class="text-sm sm:text-xl font-bold text-white leading-tight">Javier López</h4>
-                                <p class="text-xs sm:text-base text-blue-400">Miembro 2021</p>
-                                <div class="flex mt-1">
-                                    <span class="text-yellow-400 text-xs sm:text-base">★★★★★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base">
-                            "A los 45 años pensé que era tarde para empezar. Ahora tengo más energía que a los 30."
-                        </p>
-                        <div class="text-xs text-gray-400">
-                            🎂 45 años • ⚡ Más energía
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 5 -->
-                    <div class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]">
-                        <div class="flex items-start mb-3 md:mb-6">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0">
-                                L
-                            </div>
-                            <div class="ml-2 sm:ml-4 min-w-0 flex-1">
-                                <h4 class="text-sm sm:text-xl font-bold text-white leading-tight">Laura Sánchez</h4>
-                                <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
-                                <div class="flex mt-1">
-                                    <span class="text-yellow-400 text-xs sm:text-base">★★★★★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base">
-                            "Las clases grupales son adictivas. He logrado mis objetivos más rápido de lo esperado."
-                        </p>
-                        <div class="text-xs text-gray-400">
-                            🏃‍♀️ Clases grupales • 🎯 Objetivos
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controles de navegación -->
-                <div class="flex justify-center mt-8 space-x-4">
-                    <button onclick="scrollTestimonials('left')" class="bg-gray-800/80 hover:bg-blue-600 transition-colors duration-300 p-3 rounded-full border border-gray-600 hover:border-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                        </svg>
-                    </button>
-                    <button onclick="scrollTestimonials('right')" class="bg-gray-800/80 hover:bg-blue-600 transition-colors duration-300 p-3 rounded-full border border-gray-600 hover:border-blue-500">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="text-center bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-600/30">
-                <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-                    ¿Listo para tu transformación?
-                </h3>
-                <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Únete a nuestra comunidad fitness y comienza tu viaje hacia una vida más saludable hoy mismo
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 [box-shadow:0_0_30px_rgba(59,130,246,0.3)] animate-pulse min-w-[200px] text-sm sm:text-base">
-                        <span class="flex items-center justify-center">
-                            ¡Inscríbete Ahora!
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
-                        </span>
-                    </button>
-                    
-                    <button class="bg-transparent border-2 border-gray-500 hover:border-blue-500 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:bg-blue-500/10 min-w-[200px] text-sm sm:text-base">
-                        Clase Gratuita
-                    </button>
-                </div>
-
-                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                    <div class="flex flex-col items-center">
-                        <div class="text-3xl font-bold text-blue-400 mb-2">500+</div>
-                        <div class="text-gray-300">Miembros Activos</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="text-3xl font-bold text-purple-400 mb-2">95%</div>
-                        <div class="text-gray-300">Satisfacción</div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="text-3xl font-bold text-green-400 mb-2">3+</div>
-                        <div class="text-gray-300">Años de Experiencia</div>
-                    </div>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+          >
+            Lo que dicen nuestros miembros
+          </h2>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Descubre cómo hemos transformado la vida de miles de personas
+          </p>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6"
+          ></div>
         </div>
+
+        <!-- Testimonios Slider -->
+        <div class="relative mb-16">
+          <div
+            class="testimonial-slider flex overflow-x-auto gap-3 sm:gap-4 md:gap-6 pb-6 px-2 sm:px-0 [scroll-snap-type:x_mandatory] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden [scroll-behavior:smooth]"
+            id="testimonialSlider"
+          >
+            <!-- Testimonio 1 -->
+            <div
+              class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]"
+            >
+              <div class="flex items-start mb-3 md:mb-6">
+                <div
+                  class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0"
+                >
+                  M
+                </div>
+                <div class="ml-2 sm:ml-4 min-w-0 flex-1">
+                  <h4
+                    class="text-sm sm:text-xl font-bold text-white leading-tight"
+                  >
+                    María González
+                  </h4>
+                  <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
+                  <div class="flex mt-1">
+                    <span class="text-yellow-400 text-xs sm:text-base"
+                      >★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base"
+              >
+                "En 8 meses he perdido 15 kilos y ganado mucha masa muscular.
+                Los entrenadores son increíbles."
+              </p>
+              <div class="text-xs text-gray-400">📈 -15kg • 💪 +20% masa</div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div
+              class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]"
+            >
+              <div class="flex items-start mb-3 md:mb-6">
+                <div
+                  class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0"
+                >
+                  C
+                </div>
+                <div class="ml-2 sm:ml-4 min-w-0 flex-1">
+                  <h4
+                    class="text-sm sm:text-xl font-bold text-white leading-tight"
+                  >
+                    Carlos Rodríguez
+                  </h4>
+                  <p class="text-xs sm:text-base text-blue-400">Miembro 2022</p>
+                  <div class="flex mt-1">
+                    <span class="text-yellow-400 text-xs sm:text-base"
+                      >★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base"
+              >
+                "El ambiente es fantástico y las instalaciones son de primera.
+                He mejorado mi fuerza en un 40%."
+              </p>
+              <div class="text-xs text-gray-400">
+                💪 +40% fuerza • ⏱️ 18 meses
+              </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div
+              class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]"
+            >
+              <div class="flex items-start mb-3 md:mb-6">
+                <div
+                  class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0"
+                >
+                  A
+                </div>
+                <div class="ml-2 sm:ml-4 min-w-0 flex-1">
+                  <h4
+                    class="text-sm sm:text-xl font-bold text-white leading-tight"
+                  >
+                    Ana Martínez
+                  </h4>
+                  <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
+                  <div class="flex mt-1">
+                    <span class="text-yellow-400 text-xs sm:text-base"
+                      >★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base"
+              >
+                "Después de tener mi bebé, pensé que nunca volvería a estar en
+                forma. ¡Estoy mejor que antes!"
+              </p>
+              <div class="text-xs text-gray-400">
+                🤱 Post-parto • 💪 Mejor forma
+              </div>
+            </div>
+
+            <!-- Testimonio 4 -->
+            <div
+              class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]"
+            >
+              <div class="flex items-start mb-3 md:mb-6">
+                <div
+                  class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0"
+                >
+                  J
+                </div>
+                <div class="ml-2 sm:ml-4 min-w-0 flex-1">
+                  <h4
+                    class="text-sm sm:text-xl font-bold text-white leading-tight"
+                  >
+                    Javier López
+                  </h4>
+                  <p class="text-xs sm:text-base text-blue-400">Miembro 2021</p>
+                  <div class="flex mt-1">
+                    <span class="text-yellow-400 text-xs sm:text-base"
+                      >★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base"
+              >
+                "A los 45 años pensé que era tarde para empezar. Ahora tengo más
+                energía que a los 30."
+              </p>
+              <div class="text-xs text-gray-400">
+                🎂 45 años • ⚡ Más energía
+              </div>
+            </div>
+
+            <!-- Testimonio 5 -->
+            <div
+              class="testimonial-card min-w-[260px] w-[260px] sm:min-w-[340px] sm:w-auto md:min-w-[400px] bg-gray-800/80 backdrop-blur-sm rounded-2xl p-3 sm:p-6 md:p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 [scroll-snap-align:start] [flex:none]"
+            >
+              <div class="flex items-start mb-3 md:mb-6">
+                <div
+                  class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-sm sm:text-xl md:text-2xl font-bold flex-shrink-0"
+                >
+                  L
+                </div>
+                <div class="ml-2 sm:ml-4 min-w-0 flex-1">
+                  <h4
+                    class="text-sm sm:text-xl font-bold text-white leading-tight"
+                  >
+                    Laura Sánchez
+                  </h4>
+                  <p class="text-xs sm:text-base text-blue-400">Miembro 2023</p>
+                  <div class="flex mt-1">
+                    <span class="text-yellow-400 text-xs sm:text-base"
+                      >★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-gray-300 leading-relaxed mb-2 md:mb-4 text-xs sm:text-base"
+              >
+                "Las clases grupales son adictivas. He logrado mis objetivos más
+                rápido de lo esperado."
+              </p>
+              <div class="text-xs text-gray-400">
+                🏃‍♀️ Clases grupales • 🎯 Objetivos
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles de navegación -->
+          <div class="flex justify-center mt-8 space-x-4">
+            <button
+              onclick="scrollTestimonials('left')"
+              class="bg-gray-800/80 hover:bg-blue-600 transition-colors duration-300 p-3 rounded-full border border-gray-600 hover:border-blue-500"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </button>
+            <button
+              onclick="scrollTestimonials('right')"
+              class="bg-gray-800/80 hover:bg-blue-600 transition-colors duration-300 p-3 rounded-full border border-gray-600 hover:border-blue-500"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div
+          class="text-center bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-gray-600/30"
+        >
+          <h3 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+            ¿Listo para tu transformación?
+          </h3>
+          <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Únete a nuestra comunidad fitness y comienza tu viaje hacia una vida
+            más saludable hoy mismo
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <button
+              class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 [box-shadow:0_0_30px_rgba(59,130,246,0.3)] animate-pulse min-w-[200px] text-sm sm:text-base"
+            >
+              <span class="flex items-center justify-center">
+                ¡Inscríbete Ahora!
+                <svg
+                  class="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+
+            <button
+              class="bg-transparent border-2 border-gray-500 hover:border-blue-500 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full transition-all duration-300 hover:bg-blue-500/10 min-w-[200px] text-sm sm:text-base"
+            >
+              Clase Gratuita
+            </button>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="flex flex-col items-center">
+              <div class="text-3xl font-bold text-blue-400 mb-2">30+</div>
+              <div class="text-gray-300">Miembros Activos</div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="text-3xl font-bold text-purple-400 mb-2">99%</div>
+              <div class="text-gray-300">Satisfacción</div>
+            </div>
+            <div class="flex flex-col items-center">
+              <div class="text-3xl font-bold text-green-400 mb-2">19+</div>
+              <div class="text-gray-300">Años de Experiencia</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-     <!-- Botón de WhatsApp -->
-  <a href="https://wa.me/+51960152977" target="_blank" class="whatsapp-btn">
-    <img src="assets/img/waaasaa.png" alt="WhatsApp" />
-  </a>
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/+51960152977" target="_blank" class="whatsapp-btn">
+      <img src="assets/img/waaasaa.png" alt="WhatsApp" />
+    </a>
 
-  <!-- Footer -->
-<footer class="bg-white dark:bg-gray-900 pt-10">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 pt-10">
+      <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0">
-              <a href="#" class="flex items-center">
-                  <img src="assets/img/ftp.png" class="h-8 me-3" alt="FlowBite Logo" />
-                  <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">FirstTeamPeru™</span>
-              </a>
+            <a href="#" class="flex items-center">
+              <img
+                src="assets/img/ftp.png"
+                class="h-8 me-3"
+                alt="FlowBite Logo"
+              />
+              <span
+                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+                >FirstTeamPeru™</span
+              >
+            </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">PROGRAMAS</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Programa1</a>
-                      </li>
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Programa2</a>
-                      </li>
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Programa3</a>
-                      </li>
-                      <li >
-                          <a href="#" class="hover:underline">Programa4</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">MENU</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="index.html" class="hover:underline ">Inicio</a>
-                      </li>
-                      <li class="mb-4">
-                          <a href="nosotros.html" class="hover:underline">Nosotros</a>
-                      </li>
-                      <li>
-                          <a href="entrenamientos.html" class="hover:underline">Entrenamientos</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                  <ul class="text-gray-500 dark:text-gray-400 font-medium">
-                      <li class="mb-4">
-                          <a href="#" class="hover:underline">Privacy Policy</a>
-                      </li>
-                      <li>
-                          <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-                      </li>
-                  </ul>
-              </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                PROGRAMAS
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Alto Rendimiento</a>
+                </li>
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Clases Grupales</a>
+                </li>
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Tennis Performance</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Recuperacion Fisica</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                MENU
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="index.html" class="hover:underline">Inicio</a>
+                </li>
+                <li class="mb-4">
+                  <a href="nosotros.html" class="hover:underline">Nosotros</a>
+                </li>
+                <li>
+                  <a href="entrenamientos.html" class="hover:underline"
+                    >Entrenamientos</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2
+                class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+              >
+                Legal
+              </h2>
+              <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                <li class="mb-4">
+                  <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+              </ul>
+            </div>
           </div>
-      </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-      <div class="sm:flex sm:items-center sm:justify-between">
-          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">FirstTeamPeru™</a>. All Rights Reserved.
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            >© 2025 <a href="#" class="hover:underline">FirstTeamPeru™</a>. All
+            Rights Reserved.
           </span>
           <div class="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
-                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
-                    </svg>
-                  <span class="sr-only">Facebook page</span>
-              </a>
-              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
-                        <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
-                    </svg>
-                  <span class="sr-only">Discord community</span>
-              </a>
-              <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
-                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
-                    <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
-                </svg>
-                  <span class="sr-only">Twitter page</span>
-              </a>
-
-
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 8 19"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Facebook page</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 21 16"
+              >
+                <path
+                  d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"
+                />
+              </svg>
+              <span class="sr-only">Discord community</span>
+            </a>
+            <a
+              href="#"
+              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+            >
+              <svg
+                class="w-4 h-4"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 17"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span class="sr-only">Twitter page</span>
+            </a>
           </div>
+        </div>
       </div>
-    </div>
-</footer>
+    </footer>
 
- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
-  <script src="assets/js/general.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="assets/js/general.js"></script>
+  </body>
 </html>

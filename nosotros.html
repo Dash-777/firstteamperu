@@ -11,162 +11,340 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans min-h-screen">
-    <!-- Header -->
-<nav class="fixed w-full z-50 backdrop-blur-md py-3 px-4">
-  <div class="max-w-7xl mx-auto px-2 sm:px-6">
-    <div class="flex h-16 items-center justify-between">
-      
-      <!-- Logo - Izquierda -->
-<div class="flex gap-3">
-        <div class="flex shrink-0 items-center">
-        <img href="index.html" src="assets/img/Captura-Photoroom.png" alt="Your Company" class="h-12 w-auto" />
-      </div>
-      <div class="flex shrink-0 items-center md:mx-3">
-        <img href="index.html" src="assets/img/alan_logo.png" alt="Your Company" class="h-12 w-auto" />
-      </div>
-</div>
-
-      <!-- Menú Desktop - Centro -->
-      <div class="hidden sm:flex flex-1 justify-center">
-        <div class="flex space-x-6">
-          <a href="index.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
-          <a href="nosotros.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
-          
-          <!-- Programs Dropdown Desktop -->
-          <div class="relative">
-            <button id="programs-dropdown-button" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center">
-              PROGRAMAS
-              <svg class="w-4 h-4 ml-1 transition-transform duration-200" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            <div id="programs-dropdown" class="absolute hidden bg-gray-800 min-w-[160px] rounded-md shadow-lg z-10">
-              <div class="py-1">
-                <a href="programa1.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 1</a>
-                <a href="programa2.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 2</a>
-                <a href="programa3.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 3</a>
-                <a href="programa4.html" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white">Programa 4</a>
-              </div>
+    <!-- navbar -->
+    <nav class="fixed w-full z-50 backdrop-blur-md py-3 px-4">
+      <div class="max-w-7xl mx-auto px-2 sm:px-6">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo - Izquierda -->
+          <div class="flex gap-3">
+            <div class="flex shrink-0 items-center">
+              <img
+                href="index.html"
+                src="assets/img/Captura-Photoroom.png"
+                alt="Your Company"
+                class="h-12 w-auto"
+              />
+            </div>
+            <div class="flex shrink-0 items-center md:mx-3">
+              <img
+                href="index.html"
+                src="assets/img/alan_logo.png"
+                alt="Your Company"
+                class="h-12 w-auto"
+              />
             </div>
           </div>
-          
-          <a href="entrenamientos.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA</a>
-        </div>
-      </div>
 
-      <!-- Redes Sociales y Botón - Derecha -->
-      <div class="hidden sm:flex items-center space-x-4">
-        <!-- Redes Sociales -->
-        <div class="flex items-center space-x-2">
-          <!-- Instagram -->
-          <a class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
-            href="#" target="_blank" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
+          <!-- Menú Desktop - Centro -->
+          <div class="hidden sm:flex flex-1 justify-center">
+            <div class="flex space-x-6">
+              <a
+                href="index.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >INICIO</a
+              >
+              <a
+                href="nosotros.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >NOSOTROS</a
+              >
+              
 
-          <!-- YouTube -->
-          <a class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="YouTube">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
+              <!-- Programs Dropdown Desktop -->
+              <div class="relative">
+                <button
+                  id="programs-dropdown-button"
+                  class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex items-center"
+                >
+                  PROGRAMAS
+                  <svg
+                    class="w-4 h-4 ml-1 transition-transform duration-200"
+                    id="dropdown-arrow"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="programs-dropdown"
+                  class="absolute hidden bg-gray-800 min-w-[160px] rounded-md shadow-lg z-10"
+                >
+                  <div class="py-1">
+                    <a
+                      href="programa1.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Alto Rendimiento
+                    </a>
+                    <a
+                      href="programa2.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Clases Grupales</a
+                    >
+                    <a
+                      href="programa3.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Tennis Performance</a
+                    >
+                    <a
+                      href="programa4.html"
+                      class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >Recuperación Física</a
+                    >
+                  </div>
+                </div>
+              </div>
 
-          <!-- Twitter/X -->
-          <a class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="X">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+              <a
+                href="galeria.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >GALERIA</a
+              >
+                            <a
+                href="ubicacion.html"
+                class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                >UBICACION</a
+              >
+            </div>
+          </div>
 
-          <!-- TikTok -->
-          <a class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="TikTok">
-            <img src="assets/img/tiktopdd.jpg" alt="TikTok" class="w-6 h-6 object-cover rounded-full" />
-          </a>
+          <!-- Redes Sociales y Botón - Derecha -->
+          <div class="hidden sm:flex items-center space-x-4">
+            <!-- Redes Sociales -->
+            <div class="flex items-center space-x-2">
+              <!-- Instagram -->
+              <a
+                class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-300 via-pink-600 to-purple-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <img
+                  src="assets/img/instagram-logo.png"
+                  alt="Facebook"
+                  class="w-8 h-8 object-cover rounded-full"
+                />
+              </a>
 
-          <!-- Facebook -->
-          <a class="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform duration-200" 
-            href="#" target="_blank" aria-label="Facebook">
-            <img src="assets/img/asasas.png" alt="Facebook" class="w-6 h-6 object-cover rounded-full" />
-          </a>
-        </div>
+              <!-- YouTube -->
+              <a
+                class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="YouTube"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+              </a>
 
-        <!-- Botón CTA -->
-        <button class="group relative px-4 py-2 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-xs border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)] active:translate-y-1 active:shadow-[0_0_15px_rgba(34,211,238,0.45)] active:scale-[0.98]">
-          <span class="flex items-center gap-2 relative z-10">
-            <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 transition-transform duration-300 group-hover:scale-125">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-            ¡Inscríbete ahora!
-            <svg viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 transition-all duration-300 group-hover:-rotate-45 group-hover:scale-150">
-              <path d="M12 2v20m0-20L4 12m8-10l8 10"></path>
-            </svg>
-          </span>
-          <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          <div class="absolute -inset-1 -z-10 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-20 group-hover:opacity-30 blur-xl rounded-md transition-all duration-300 group-hover:blur-2xl"></div>
-        </button>
-      </div>
+              <!-- Twitter/X -->
+              <a
+                class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="X"
+              >
+                <img
+                  src="assets/img/x-logo.png"
+                  alt="Facebook"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
 
-      <!-- Botón menú móvil -->
-      <div class="sm:hidden">
-        <button id="mobile-menu-button" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none">
-          <span class="sr-only">Open main menu</span>
-          <svg id="mobile-menu-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="mobile-menu-close" class="hidden w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
+              <!-- TikTok -->
+              <a
+                class="w-8 h-8 rounded-full bg-black flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="TikTok"
+              >
+                <img
+                  src="assets/img/tiktopdd.jpg"
+                  alt="TikTok"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
 
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden sm:hidden">
-      <div class="space-y-1 px-2 pt-2 pb-3">
-        <a href="index.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">INICIO</a>
-        <a href="nosotros.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">NOSOTROS</a>
-        
-        <!-- Programs Dropdown Mobile -->
-        <div>
-          <button id="mobile-programs-button" class="w-full text-left rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex justify-between items-center">
-            PROGRAMAS
-            <svg id="mobile-programs-arrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="mobile-programs-dropdown" class="hidden pl-4">
-            <a href="programa1.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 1</a>
-            <a href="programa2.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 2</a>
-            <a href="programa3.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 3</a>
-            <a href="programa4.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Programa 4</a>
+              <!-- Facebook -->
+              <a
+                class="w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                href="#"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <img
+                  src="assets/img/facebook-logo.png"
+                  alt="Facebook"
+                  class="w-6 h-6 object-cover rounded-full"
+                />
+              </a>
+            </div>
+
+            <!-- Botón CTA -->
+            <div>
+              <a
+                href="inscripcion.html"
+                class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]"
+              >
+                <span
+                  class="flex items-center justify-center gap-2 relative z-10"
+                >
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  ¡Inscríbete ahora!
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Botón menú móvil -->
+          <div class="sm:hidden">
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                id="mobile-menu-open"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                id="mobile-menu-close"
+                class="hidden w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-        
-        <a href="entrenamientos.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">ENTRENAMIENTOS DESDE CASA</a>
-        
 
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden sm:hidden">
+          <div class="space-y-1 px-2 pt-2 pb-3">
+            <a
+              href="index.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >INICIO</a
+            >
+            <a
+              href="nosotros.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >NOSOTROS</a
+            >
 
-        <!-- Botón CTA en móvil -->
-        <div class="pt-4 px-3">
-          <button class="w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]">
-            <span class="flex items-center justify-center gap-2 relative z-10">
-              <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
-                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-              ¡Inscríbete ahora!
-            </span>
-            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"></div>
-          </button>
+            <!-- Programs Dropdown Mobile -->
+            <div>
+              <button
+                id="mobile-programs-button"
+                class="w-full text-left rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white flex justify-between items-center"
+              >
+                PROGRAMAS
+                <svg
+                  id="mobile-programs-arrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobile-programs-dropdown" class="hidden pl-4">
+                <a
+                  href="programa1.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Alto Rendimiento</a
+                >
+                <a
+                  href="programa2.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Clases Grupales</a
+                >
+                <a
+                  href="programa3.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Tennis Performance</a
+                >
+                <a
+                  href="programa4.html"
+                  class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                  >Recuperación Física</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="galeria.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >GALERIA</a
+            >
+                        <a
+              href="ubicacion.html"
+              class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >UBICACION</a
+            >
+
+            <!-- Botón CTA en móvil -->
+            <div class="pt-4 px-3">
+              <a
+                href="inscripcion.html"
+                class="block w-full group relative px-4 py-3 rounded-md bg-black text-cyan-400 font-bold tracking-widest uppercase text-sm border border-cyan-500/50 hover:border-cyan-500 transition-all duration-300 ease-in-out hover:text-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.25)] hover:shadow-[0_0_35px_rgba(34,211,238,0.45)]"
+              >
+                <span
+                  class="flex items-center justify-center gap-2 relative z-10"
+                >
+                  <svg fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  ¡Inscríbete ahora!
+                </span>
+                <div
+                  class="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-600/25 to-blue-600/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-md"
+                ></div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
      <div class="p-10"></div>
 
